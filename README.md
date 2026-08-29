@@ -45,3 +45,7 @@ git push -u origin main
 ```
 
 Cloudflare D1 migration files are committed to the repo. That is the mechanism we will use to change the database later without wiping tester data.
+
+
+## v0.1.1 Access identity fix
+Cloudflare Workers with Static Assets do not pass `ctx.access` through the internal asset router to the user Worker. The API now falls back to the authenticated `CF_Authorization` cookie and Cloudflare Access `/cdn-cgi/access/get-identity` endpoint so the signed-in tester can be mapped to a permanent D1 user record.
