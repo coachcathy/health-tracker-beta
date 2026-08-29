@@ -4,14 +4,7 @@
  "main":"src/worker.js",
  "compatibility_date":"2026-08-29",
  "assets":{"directory":"./public","binding":"ASSETS"},
- "d1_databases": [
-  {
-    "binding": "DB",
-    "database_name": "health-tracker-beta-db",
-    "database_id": "ac4f2a39-3327-4993-9dba-d56f47a3c270",
-    "migrations_dir": "migrations"
-  }
-],
- "vars":{"ADMIN_EMAILS":""},
+ "d1_databases":[{"binding":"DB","database_name":"health-tracker-beta-db","database_id":"ac4f2a39-3327-4993-9dba-d56f47a3c270","migrations_dir":"migrations"}],
+ "vars":{"ADMIN_EMAILS":"", "ACCESS_TEAM_DOMAIN":""},
  "access":{"dev":{"aud":"health-tracker-beta-local","identity":{"email":"tester@example.com","name":"Local Beta Tester"}}}
 }

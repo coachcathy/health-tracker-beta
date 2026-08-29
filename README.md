@@ -49,3 +49,7 @@ Cloudflare D1 migration files are committed to the repo. That is the mechanism w
 
 ## v0.1.1 Access identity fix
 Cloudflare Workers with Static Assets do not pass `ctx.access` through the internal asset router to the user Worker. The API now falls back to the authenticated `CF_Authorization` cookie and Cloudflare Access `/cdn-cgi/access/get-identity` endpoint so the signed-in tester can be mapped to a permanent D1 user record.
+
+
+## v0.1.2 Access diagnostic
+Identity lookup now tries ctx.access, then Cf-Access-Authenticated-User-Email, then the Zero Trust team-domain identity endpoint. `/api/debug/access` reports only which authentication signals are present.
